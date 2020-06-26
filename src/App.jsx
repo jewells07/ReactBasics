@@ -1,31 +1,15 @@
-import React from 'react';
-import './index.css';
+const goodBoy = "Jewells";
+const badBoy = "Jackie";
 
-function App() {
-    let currDate = new Date();
-    currDate = currDate.getHours();
-    let greeting = '';
-    const cssStyle = {};
-
-    if (currDate >= 1 && currDate < 12) {
-        greeting = 'Good Morning';
-        cssStyle.color = 'green';
-    }
-    else if (currDate >= 12 && currDate < 19) {
-        greeting = 'Good Afternoon';
-        cssStyle.color = 'Orange';
-    }
-    else {
-        greeting = 'Good Evening';
-        cssStyle.color = 'Black';
-    }
-    return (<>
-        <div>
-            <h1>
-                Hello Sir, <span style={cssStyle}>{greeting}</span>
-            </h1>
-        </div>
-    </>);
+function myName() {
+    let name = "First Function"
+    return (name);
 }
 
-export default App;
+function myNames() {
+    let names = "Second Function"
+    return (names);
+}
+
+export default goodBoy;
+export { badBoy, myName ,myNames };
