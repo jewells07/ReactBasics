@@ -2,32 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// let currDate = new Date(2020, 6, 26, 1);
+let currDate = new Date();
+currDate = currDate.getHours();
+let greeting = '';
+const cssStyle = {};
 
-const name = "Jewells joshi";
-const img1 = "https://picsum.photos/200/300";
-const img2 = "https://picsum.photos/250/300";
-const img3 = "https://picsum.photos/300/300";
-const link = "https://www.jjblogs.in";
-
-const heading = {
-  color: '#fa9191',
-  textTransform: 'capitalize',
-  textAlign: 'center',
-  fontWeight: 'bold',
-  textShadow: '0px 2px 4px #ffe9c5',
-  backgroundColor: 'black',
-  margin: '70px 0',
-  fontFamily: '"Josefin Sans", sans-serif'
+if (currDate >= 1 && currDate < 12) {
+  greeting = 'Good Morning';
+  cssStyle.color = 'green';
+}
+else if (currDate >= 12 && currDate < 19) {
+  greeting = 'Good Afternoon';
+  cssStyle.color = 'Orange';
+}
+else {
+  greeting = 'Good Evening';
+  cssStyle.color = 'Black';
 }
 
-ReactDOM.render(<>
-  <h1 style={ heading }> {`My name is ${name}`}</h1>
-
-  <div className="img_div">
-    <img src={img1} alt="random img che bhai" />
-    <img src={img2} alt="random img che bhai" />
-    <a href={link} target="_kuchbhi">
-      <img src={img3} alt="random img che bhai" />
-    </a>
-  </div>
-</>, document.getElementById('root'));
+ReactDOM.render(
+  <>
+    <div>
+      <h1>
+        Hello Sir, <span style={cssStyle}>{greeting}</span>
+      </h1>
+    </div>
+  </>, document.getElementById('root'));
