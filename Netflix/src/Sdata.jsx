@@ -27,7 +27,7 @@ const Sdata = [
     {
         id: 4,
         imgsrc: "https://viralcocaine.com/wp-content/uploads/2020/04/3FD04607-D5A0-4F99-A477-ACABA0C8147D-758x478.jpeg",
-        title: "A Netflix Orignal Series",
+        title: "A Amazon Orignal Series",
         sname: "The Vampire Diaries",
         link: "https://www.netflix.com/in/title/70143860",
     },
