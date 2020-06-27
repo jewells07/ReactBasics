@@ -7,16 +7,19 @@ const App = () => {
 
 
     // useState(initial value) is passing to count and setCount is a fun that will updating and pass it to count
-    const [count, setCount] = useState(0);
+    
+    let newTime = new Date().toLocaleTimeString();
+    const [ctime, setCtime] = useState(newTime);
 
 
-    const IncNum = () => {
-        setCount(count + 1);
+    const UpdateTime = () => {
+        newTime = new Date().toLocaleTimeString();
+        setCtime(newTime);
     }
     return (
         <>
-            <h1>{count}</h1>
-            <button onClick={IncNum}>Click Me</button>
+            <h1>{ctime}</h1>
+            <button onClick={UpdateTime}>Get Time</button>
         </>
     );
 }
