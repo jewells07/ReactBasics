@@ -5,10 +5,10 @@ function Card(props) {
         <>
             <div className="cards">
                 <div className="card">
-                    <img src={props.imgsrc} alt="myPic" className="card_img" />
-                    <div className="card_info">
-                        <span className="card_category">{props.title}</span>
-                        <h3 className="card_title">{props.sname}</h3>
+                    <img src={props.imgsrc} alt="myPic" className="card__img" />
+                    <div className="card__info">
+                        <span className="card__category">{props.title}</span>
+                        <h3 className="card__title">{props.sname}</h3>
                         <a href={props.link} target="_blank" rel="noopener noreferrer">
                             <button> Watch Now </button>
                         </a>
