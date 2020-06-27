@@ -22,7 +22,8 @@ const App = () => {
     return (
         <>
             <div style={{ backgroundColor: bg }}>
-                <button onClick={bgChange} onDoubleClick={doubleClick}>{name}</button>
+                {/* <button onClick={bgChange} onDoubleClick={doubleClick}>{name}</button> */}
+                <button onMouseEnter={bgChange} onMouseLeave={doubleClick}>{name}</button>
             </div>
         </>
     );
