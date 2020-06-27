@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 
 const App = () => {
-    const [name, setName] = useState('');
-    const [pass, setPass] = useState('');
+    const [fullName, setFullName] = useState({
+        fname: "",
+        lname: "",
+    });
 
-    const [fullName, setFullName] = useState('');
-    const [Password, setPassword] = useState('');
-
-    const inputName = (event) => {
+    const inputEvent = (event) => {
         // console.log('words ', event.target.value);
-        setName(event.target.value);
-    }
+        // console.log('words ', event.target.name);
+        // console.log('words ', event.target.placeholder);
 
-    const inputPass = (event) => {
-        setPass(event.target.value);
+        const value = event.target.value;
+        const name = event.target.name;
+
+        // React setState pervious value
+        setFullName((preValue) => {
+            // console.log(preValue);
+            if (name === 'fname') {
+                return {
+                    'fname': value,
+                    'lname': preValue.lname,
+                };
+            }else if (name === 'lname') {
+                return {
+                    'fname': preValue.fname,
+                    'lname': value,
+                };
+            }
+
+        });
     }
 
     const onSubmit = (event) => {
         event.preventDefault();
-        setFullName(name);
-        setPassword(pass);
+        alert('Form Submitted');
     }
 
     return (
@@ -27,9 +42,9 @@ const App = () => {
             <div className="main_div">
                 <form onSubmit={onSubmit}>
                     <div>
-                        <h1>Hello {fullName} {Password}</h1>
-                        <input type="text" placeholder="Enter Your Name" onChange={inputName} value={name} />
-                        <input type="password" placeholder="Enter Your Password" onChange={inputPass} value={pass} />
+                        <h1>Hello {fullName.fname} {fullName.lname}</h1>
+                        <input type="text" placeholder="Enter Your Name" name="fname" onChange={inputEvent} value={fullName.fname} />
+                        <input type="text" placeholder="Enter Your Last" name="lname" onChange={inputEvent} value={fullName.lname} />
                         <button type="submit">Submit</button>
                     </div>
                 </form>
