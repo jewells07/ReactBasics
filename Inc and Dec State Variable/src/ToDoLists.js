@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import AddIcon from "@material-ui/icons/Add";
-import DeleteIcon from "@material-ui/icons/Delete";
+import AddIcon from '@material-ui/icons/Add';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const ToDoLists = (props) => {
   const [num, setNum] = useState(0);
@@ -23,8 +25,17 @@ const ToDoLists = (props) => {
         <div className="center_div">
           <h1> {num} </h1>
           <div className="btn_div">
-            <button onClick={incNum}> <AddIcon /> </button>
-            <button onClick={decNum}> <DeleteIcon /> </button>
+            <Tooltip title="Add">
+              <Button className="btn_green" onClick={incNum}>
+                <AddIcon />
+              </Button>
+            </Tooltip>
+
+            <Tooltip title="Delete">
+              <Button className="btn_red" onClick={decNum}>
+                <DeleteIcon />
+              </Button>
+            </Tooltip>
           </div>
         </div>
       </div>
